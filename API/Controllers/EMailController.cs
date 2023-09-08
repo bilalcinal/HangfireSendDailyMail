@@ -23,14 +23,23 @@ namespace API.Controllers
         [HttpPost]
         public async Task<IActionResult> EMailAdd(EmailModel emailModel)
         {
-            var Email = new EMailData
+            try
             {
-                EMail = emailModel.EMail
-            };
-            _applicationDbContext.EmailDatas.Add(Email);
-            await _applicationDbContext.SaveChangesAsync();
+                var Email = new EMailData
+                {
+                    EMail = emailModel.EMail
+                };
+                _applicationDbContext.EmailDatas.Add(Email);
+                await _applicationDbContext.SaveChangesAsync();
 
-            return Ok();
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                
+                throw ex;
+            }
+           
         }
     }
 }

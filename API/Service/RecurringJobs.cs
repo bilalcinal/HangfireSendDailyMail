@@ -53,7 +53,7 @@ namespace API.Service
         {
             var recurringJobManager = serviceProvider.GetRequiredService<IRecurringJobManager>();
 
-            recurringJobManager.AddOrUpdate("HatırlatmaEpostalarınıGonder", Job.FromExpression(() => new RecurringJobs(null).SendReminderEmailsJob()), "21 9 * * *");
+            recurringJobManager.AddOrUpdate("Hatırlatma Epostalarını Gönder", Job.FromExpression(() => new RecurringJobs(null).SendReminderEmailsJob()), "21 9 * * *");
         }
     }
 }

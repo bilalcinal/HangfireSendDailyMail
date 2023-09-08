@@ -10,7 +10,5 @@ public class ApplicationDbContext : DbContext
         
     }
     public DbSet<EMailData> EmailDatas { get; set; }
-
-
 }
  
